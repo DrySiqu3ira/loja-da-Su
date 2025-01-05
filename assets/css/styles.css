@@ -29,8 +29,8 @@
 .navbar .menu a {
   color: #000000;
   text-decoration: none;
-  font-size: 1.1em;
-  padding: 2px 5px;
+  font-size: 100%;
+  padding: 1px 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -43,7 +43,7 @@
 .navbar.flutuante {
   position: fixed;
   bottom: 20px;
-  right: 0px;
+  right: 0;
   border-radius: 50%;
   background-color: #02c9a85b;
   transition: all 0.3s ease;
