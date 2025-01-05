@@ -19,7 +19,7 @@
 .navbar .menu {
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  right: 1px;
 }
 
 .navbar .menu li {
