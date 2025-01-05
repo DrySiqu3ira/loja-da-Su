@@ -29,8 +29,8 @@
 .navbar .menu a {
   color: #000000;
   text-decoration: none;
-  font-size: 1.2em;
-  padding: 5px 10px;
+  font-size: 1.1em;
+  padding: 2px 5px;
   transition: background-color 0.3s ease;
 }
 
