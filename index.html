@@ -1,411 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Virtual</title>
+    <title>Loja Su Silva</title>
 
-
+    <!-- Links para estilos e fontes -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="icon" href="./img/logo/logo (2).png" type="image/x-icon">
+    <link href="assets\css\styles.css" rel="stylesheet">
 </head>
 
-<body>
-    <!-- Barra de Navegação (Menu) -->
-    <nav class="navbar">
-        <!-- <div class="logo">
-            <img src="./img/logo.png" alt="Logo da Loja">
-        </div> -->
-        <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-        <!-- Bolinha do menu -->
-        <div id="menuToggle" class="menu-toggle">
-            <span></span>
-        </div>
-    </nav>
+<body class="bg-pink-50 text-gray-800 font-sans">
 
-    <!-- Seção Principal -->
-    <header id="home">
-        <div class="imagem-logo">
-            <img src="./img/logo.png" alt="Imagem centralizada">
-        </div>
-
-        <div class="content">
-            <h1>Bem-vindo ao Espaço da Su!</h1>
-            <p>Encontre os melhores produtos com descontos incríveis.</p>
-            <a href="#produtos" class="btn">Veja os Produtos</a>
-        </div>
+    <!-- Logo -->
+    <header class="py-2 text-center">
+        <img src="assets\img\logo\logo (2).png" alt="Logo Su Silva" class="mx-auto w-64 h-auto">
     </header>
 
+    <!-- Destaque de Marcas -->
+    <section
+        class="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-100 py-10 px-6 max-w-7xl mx-auto rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center mb-6 text-black">Nossas Marcas</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+            <a href="https://onelink.shein.com/11/4m2bj8zp2981" target="_blank" rel="noopener noreferrer"
+                class="hover:text-pink-500 font-semibold text-black">Shein</a>
+            <a href="https://www.natura.com.br/consultoria/susilvanotassublime" target="_blank"
+                rel="noopener noreferrer" class="hover:text-pink-500 font-semibold text-black">Natura</a>
+            <a href="https://minhaloja.boticario.com.br/loja-suelysilva-19696365" target="_blank"
+                rel="noopener noreferrer" class="hover:text-pink-500 font-semibold text-black">O Boticário</a>
+            <a href="https://minhaloja.quemdisseberenice.com.br/loja-suelysilva-19696365" target="_blank"
+                rel="noopener noreferrer" class="hover:text-pink-500 font-semibold text-black">Quem Disse Berenice</a>
+            <a href="https://minhaloja.eudora.com.br/loja-suelysilva-19696365" target="_blank" rel="noopener noreferrer"
+                class="hover:text-pink-500 font-semibold text-black">Eudora</a>
+            <a href="https://minhaloja.ouiparis.com/loja-suelysilva-19696365" target="_blank" rel="noopener noreferrer"
+                class="hover:text-pink-500 font-semibold text-black">O.U.I. Paris</a>
+        </div>
+    </section>
+
+    <!-- Carrossel -->
+    <div class="w-full overflow-hidden relative">
+        <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
+            <img src="./assets/img/cosmetics-1.jpg" alt="Destaque 1" class="w-full h-96 object-cover flex-shrink-0">
+            <img src="./assets/img/beauty-2.jpg" alt="Destaque 2" class="w-full h-96 object-cover flex-shrink-0">
+            <img src="./assets/img/eau-de-toilette-3.jpg" alt="Destaque 3"
+                class="w-full h-96 object-cover flex-shrink-0">
+        </div>
+    </div>
+
     <!-- Seção de Produtos -->
-    <section id="produtos" class="products">
-        <h2>Produtos em Destaque</h2>
-
-        <!-- Filtro de Marcas -->
-        <div class="filter">
-            <label for="brand-filter">Filtrar por marca:</label>
-            <select id="brand-filter">
-                <option value="all">Todas</option>
-                <option value="natura">Natura</option>
-                <option value="shein">Shein</option>
-                <option value="shopee">Shopee</option>
-                <option value="eudora">Eudora</option>
-                <option value="oboticario">O Boticário</option>
-            </select>
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-center">Nossos Produtos</h2>
+        <div class="mb-6 flex flex-wrap gap-4 justify-center">
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="all">Todos</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="Shein">Shein</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="Natura">Natura</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="O Boticário">O Boticário</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="Quem Disse Berenice">Quem Disse Berenice</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="Eudora">Eudora</button>
+            <button
+                class="filter-button bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 hover:scale-105 transition-transform duration-300"
+                data-brand="O.U.I. Paris">O.U.I. Paris</button>
         </div>
-
-        <div class="product-list" id="product-list">
-
-            <!-- Produto Natura 1 -->
-            <div class="product-item" data-brand="natura">
-                <a href="https://www.natura.com.br/p/desodorante-perfume-ilia-secreto-feminino-50-ml/NATBRA-83314?position=1&listTitle=category+page+list+showcase+-+perfumaria+feminina&consultoria=susilvanotassublime"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw6948975f/produto-joia/background/mobile/83314.jpg"
-                            alt="Produto Natura 1">
-                        <img class="hover-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw704fb689/Produtos/PRODUTO/NATBRA-83314_2.jpg"
-                            alt="Produto Natura 1 - Opção 2">
-                    </div>
-                    <p>Ilía Secreto 50 ml</p>
-                    <p>R$ 185,90</p>
-                </a>
-            </div>
-
-
-            <!-- Produto Shein 2 -->
-            <div class="product-item" data-brand="shein">
-                <a href="https://br.shein.com/Women-Tops-p-28377990-cat-2214.html?onelink=6/4bafrbvi41x5&requestId=olw-4bbb0bbvawx4&campaign_id=20&url_from=affiliate_koc_4357817995"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img" src="./img/produtos/T-shirt feminina1.jpg" alt="Produto Shein 2">
-                        <img class="hover-img" src="./img/produtos/T-shirt feminina2.jpg"
-                            alt="Produto Shein 2 - Opção 2">
-                    </div>
-                    <p>T-shirt feminina <br> manga curta</p>
-                    <P>R$50,00</P>
-                </a>
-            </div>
-
-
-            <!-- Produto Shopee 3 -->
-            <div class="product-item" data-brand="shopee">
-                <a href="https://shopee.com.br/product/496995256/19997868742?uls_trackid=51lobhd10099&utm_campaign=id_CY5cjpmyrV&utm_content=----&utm_medium=affiliates&utm_source=an_18311510451&utm_term=cch64vctxa95"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0dfiyt3fd5p82@resize_w450_nl.webp"
-                            alt="Produto Shopee 3">
-                        <img class="hover-img"
-                            src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0dfiyoxlfvk73@resize_w450_nl.webp"
-                            alt="Produto Shopee 3 - Opção 2">
-                    </div>
-                    <p>Kit com 3 <br> Mandalas Decorativas <br> MDF 3mm Cru - <br> Celebração da Vida</p>
-                    <p>R$45,90</p>
-                </a>
-            </div>
-
-
-            <!-- Produto Natura 4 -->
-            <div class="product-item" data-brand="natura">
-                <a href="https://www.natura.com.br/p/una-blush-deo-parfum-75-ml/NATBRA-128756?position=4&listTitle=category+page+list+showcase+-+perfumaria+feminina&consultoria=susilvanotassublime"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw6a9659fa/Produtos/PRODUTO/NATBRA-128756_2.jpg"
-                            alt="Produto Natura 4">
-                        <img class="hover-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa163d5f4/Produtos/PRODUTO/NATBRA-128756_1.jpg"
-                            alt="Produto Natura 4 - Opção 2">
-                    </div>
-                    <p>Una Blush 75 ml</p>
-                    <p> R$ 175,70</p>
-                </a>
-            </div>
-
-
-            <!-- Produto Shein 5 -->
-            <div class="product-item" data-brand="shein">
-                <a href="https://br.shein.com/Men-T-Shirts-p-20252335-cat-1978.html?onelink=6/4bag7ptqsgfz&requestId=olw-4bbd7mdld4b3&campaign_id=20&url_from=affiliate_koc_4357817995"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img" src="./img/produtos/Camiseta Masculina1.jpg" alt="Produto Shein 5">
-                        <img class="hover-img" src="./img/produtos/Camiseta Masculina2.jpg"
-                            alt="Produto Shein 5 - Opção 2">
-                    </div>
-                    <p>Camiseta Masculina <br> Estampa Casual Wear</p>
-                    <p>
-                        R$99,99</p>
-                </a>
-            </div>
-
-            <!-- Produto Shopee 6 -->
-            <div class="product-item" data-brand="shopee">
-                <a href="https://shopee.com.br/product/973933899/18898459775?uls_trackid=51locrmu0069&utm_campaign=id_j7Yob5b7BN&utm_content=----&utm_medium=affiliates&utm_source=an_18311510451&utm_term=cch75gorekhu"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://down-br.img.susercontent.com/file/sg-11134201-7rccv-lt438pn15q3icd@resize_w450_nl.webp"
-                            alt="Produto Shopee 6">
-                        <img class="hover-img"
-                            src="https://down-br.img.susercontent.com/file/sg-11134201-7rcc2-lt438o0hjea06e@resize_w450_nl.webp"
-                            alt="Produto Shopee 6 - Opção 2">
-                    </div>
-                    <p>Jogo C/12 Ou <br> 8 Peças Xícaras <br> Com pires Café</p>
-                    <p>R$74,99</p>
-                </a>
-            </div>
-
-            <!-- Produto Natura 7 -->
-            <div class="product-item" data-brand="natura">
-                <a href="https://www.natura.com.br/p/kaiak-sonar-deo-colonia-masculino-100-ml/NATBRA-155607?position=1&listTitle=manual+showcase+-+seus+favoritos+com+descontos+especiais&consultoria=susilvanotassublime"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2c61b9c9/Produtos/NATBRA-155607_1.jpg"
-                            alt="Produto Natura 7">
-                        <img class="hover-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw6826adb9/Produtos/NATBRA-155607_2.jpg"
-                            alt="Produto Natura 7 - Opção 2">
-                    </div>
-                    <p>Kaiak Sonar Masculino <br> 100 ml</p>
-                    <p>R$ 185,90</p>
-                </a>
-            </div>
-
-
-            <!-- Produto Shein 8 -->
-            <div class="product-item" data-brand="shein">
-                <a href="https://br.shein.com/Men-Pants-p-25055532-cat-1976.html?onelink=6/4bagjzso25hz&requestId=olw-4bbdf8mvzcb0&campaign_id=20&url_from=affiliate_koc_4357817995"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img" src="./img/produtos/Calça jeans masculina1.jpg" alt="Produto Shein 8">
-                        <img class="hover-img" src="./img/produtos/Calça jeans masculina2.jpg"
-                            alt="Produto Shein 8 - Opção 2">
-                    </div>
-                    <p>Calça jeans masculina <br> de lycra spandex skinny <br> slim Colorida</p>
-                    <p>R$99,99</p>
-                </a>
-            </div>
-
-            <!-- Produto Shopee 9 -->
-            <div class="product-item" data-brand="shopee">
-                <a href="https://shopee.com.br/product/363867060/20499033561?uls_trackid=51lodqtq0299&utm_campaign=id_10LvErWrRuX&utm_content=----&utm_medium=affiliates&utm_source=an_18311510451&utm_term=cch7vzixqqwm"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://down-br.img.susercontent.com/file/sg-11134201-7rblp-ln0cyjvie8f50c@resize_w450_nl.webp"
-                            alt="Produto Shopee 9">
-                        <img class="hover-img"
-                            src="https://down-br.img.susercontent.com/file/sg-11134201-7rbls-ln0cym4t3abe96@resize_w450_nl.webp"
-                            alt="Produto Shopee 9 - Opção 2">
-                    </div>
-                    <p>Jarra Elétrica <br> de Vidro ROSA com led azul <br> vidro temperado 110v <br> e 220v - Chaleira
-                        Elétrica
-                    </p>
-                    <p>R$105,90 - R$109,90</p>
-                </a>
-            </div>
-
-            <!-- Produto Natura 10 -->
-            <div class="product-item" data-brand="natura">
-                <a href="https://www.natura.com.br/p/desodorante-perfume-essencial-supreme-feminino-100-ml/NATBRA-95563?position=3&listTitle=manual+showcase+-+aproveite+a+perfumaria+Natura&consultoria=susilvanotassublime"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4c9e89fc/Produtos/PRODUTO/NATBRA-95563_1.jpg"
-                            alt="Produto Natura 10">
-                        <img class="hover-img"
-                            src="https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1d662353/Produtos/PRODUTO/NATBRA-95563_3.jpg"
-                            alt="Produto Natura 10 - Opção 2">
-                    </div>
-                    <p>Essencial Supreme <br> Feminino 100 ml</p>
-                    <p>R$ 278,90</p>
-                </a>
-            </div>
-
-            <!-- Produto OBoticário 11 -->
-            <div class="product-item" data-brand="oboticario">
-                <a href="https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/48597" target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/B2021030406/COMBO_2021030406.jpg"
-                            alt="Produto OBoticário 11">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/products/B2021030406/B83188-Malbec_Bleu_Desodorante_Colonia_conceito2.jpg"
-                            alt="Produto OBoticário 11 - Opção 2">
-                    </div>
-                    <p>Combo Malbec Bleu: <br> Desodorante <br> Colônia 100ml</p>
-                    <p>R$ 159,90</p>
-                </a>
-            </div>
-
-            <!-- Produto Eudora 12 -->
-            <div class="product-item" data-brand="eudora">
-                <a href="https://minhaloja.eudora.com.br/loja-suelysilva-10457548/produto/58668/?utm_source=ae&utm_medium=pdp"
-                    target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/E58668/15e216f6-a427-4c1e-9262-77cb8481f577-estojo-siage-glow-expert-natal-24-58668-frontal.jpg"
-                            alt="Produto Eudora 12">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/product/E58668/5f6969f5-3c46-470c-bee8-01dc14b96e31-estojo-siage-glow-expert-natal-24-58668-ambientada.jpg"
-                            alt="Produto Eudora 12 - Opção 2">
-                    </div>
-                    <p>Kit Presente <br> Siàge Glow Expert</p>
-                    <p>R$ 170,97</p>
-                </a>
-            </div>
-
-            <!-- Produto OBoticario 13 -->
-            <div class="product-item" data-brand="oboticario">
-                <a href="https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/82685" target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/B82685/Egeo-Des-Col-Bomb-Black-C-Car-90Ml-B82685_.jpg"
-                            alt="Produto OBoticário">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82685/egeo_bombblack_B82685_segredinhos.jpg"
-                            alt="Produto OBoticário 11 - Opção 2">
-                    </div>
-                    <p>Egeo Bomb Black <br> Desodorante Colônia 90ml</p>
-                    <p>R$ 154,90</p>
-                </a>
-            </div>
-
-            <!-- Produto Eudora 14 -->
-            <div class="product-item" data-brand="eudora">
-                <a href="https://minhaloja.eudora.com.br/loja-suelysilva-10457548/produto/53437" target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/E53437/SIAGE_NUTRI_ROSE_MASCARA_CAPILAR_E53437_PRINCIPAL_1.jpg"
-                            alt="Produto Eudora 12">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/product/E53437/a3840286-9ef7-4995-b83b-9ac4fcb42d93-eud-siage-nutri-rose-card-claims-mascara.jpg"
-                            alt="Produto Eudora 12 - Opção 2">
-                    </div>
-                    <p>Máscara Capilar <br> Siàge Nutri Rosé 250g</p>
-                    <p>R$ 69,99</p>
-                </a>
-            </div>
-
-
-            <!-- Produto OBoticário 15 -->
-            <div class="product-item" data-brand="oboticario">
-                <a href="https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/48142" target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/B48142/FLORATTA-DES-COL-CER_FLOR-75ml-V2_B48142.jpg"
-                            alt="Produto OBoticário 11">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/B48142/BOT_48142_FLORATTA_CEREJEIRA-EM-FLOR_AMBIENTADA.jpg"
-                            alt="Produto OBoticário 11 - Opção 2">
-                    </div>
-                    <p>Floratta Cerejeira <br> Em Flor <br> Desodorante <br> Colônia 75ml</p>
-                    <p>R$ 149,90 </p>
-                </a>
-
-            </div>
-
-            <!-- Produto Eudora 16 -->
-            <div class="product-item" data-brand="eudora">
-                <a href="https://minhaloja.eudora.com.br/loja-suelysilva-10457548/produto/56763" target="_blank">
-                    <div class="product-images">
-                        <img class="main-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/E56763/236335a7-d301-4446-9a80-f05648b3dfd5-e56763-siage-necessaire-frontal.jpg"
-                            alt="Produto Eudora 12">
-                        <img class="hover-img"
-                            src="https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/E56763/c1dbcd73-8006-4b31-b5a1-56b4bd16e964-e56763-siage-necessaire-aberto.jpg"
-                            alt="Produto Eudora 12 - Opção 2">
-                    </div>
-                    <p>Nécessaire <br> Roxo Eudora Siàge</p>
-                    <p>R$ 42,99</p>
-                </a>
-            </div>
-
-    </section>
-
-    <!-- Seção de Sobre -->
-    <section id="sobre" class="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>Somos uma loja virtual dedicada a encontrar os melhores produtos com preços acessíveis. Compre com confiança
-            e
-            aproveite descontos exclusivos.</p>
-
-        <!-- Ícones de redirecionamento -->
-        <div class="redirect-icons">
-            <a href="https://www.natura.com.br/consultoria/susilvanotassublime" target="_blank" class="icon-link">
-                <img src="./img/icons/up-right-from-square-solid.svg" alt="Loja" class="icon-img">
-                <p>Confira mais em Natura</p>
-            </a>
-            <a href="https://onelink.shein.com/5/475siunrfbpd?utm_source=bio_libre&utm_medium=Referral&utm_campaign=general_link"
-                target="_blank" class="icon-link">
-                <img src="./img/icons/up-right-from-square-solid.svg" alt="Desconto" class="icon-img">
-                <p>Confira mais na Shein</p>
-            </a>
-            <a href="https://s.shopee.com.br/5psVQV6XgT?share_channel_code=2" target="_blank" class="icon-link">
-                <img src="./img/icons/up-right-from-square-solid.svg" alt="Pagamento" class="icon-img">
-                <p>Confira mais na Shopee</p>
-            </a>
-            <a href="https://minhaloja.eudora.com.br/loja-suelysilva-10457548?page=1" target="_blank" class="icon-link">
-                <img src="./img/icons/up-right-from-square-solid.svg" alt="Pagamento" class="icon-img">
-                <p>Confira mais na Eudora</p>
-            </a>
-
-            <a href="https://minhaloja.grupoboticario.com.br/loja-suelysilva-19696365" target="_blank"
-                class="icon-link">
-                <img src="./img/icons/up-right-from-square-solid.svg" alt="Pagamento" class="icon-img">
-                <p>Confira mais na O Boticário</p>
-            </a>
-
-
-
-        </div>
-
-    </section>
-
-
-    <!-- Seção de Redes Sociais -->
-    <section id="contato" class="social-media">
-        <h2>Contato</h2>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100016097946971" target="_blank" class="social-icon"
-                title="Facebook">
-                <img src="./img/redeSocial/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/eu.suely.weslley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank" class="social-icon" title="Instagram">
-                <img src="./img/redeSocial/instagram.png" alt="Instagram">
-            </a>
-            <a href="https://www.tiktok.com/@su.silva16?is_from_webapp=1&sender_device=pc" target="_blank"
-                class="social-icon" title="Tiktok">
-                <img src="./img/redeSocial/tiktok.png" alt="Tiktok">
-            </a>
-            <a href="https://wa.me/+555592995302228" target="_blank" class="social-icon" title="Whatsapp">
-                <img src="./img/redeSocial/whatsapp.png" alt="Whatsapp">
-            </a>
-
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="products">
+            <!-- Os produtos são carregados dinamicamente pelo JavaScript -->
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Su Silva Online. Todos os direitos reservados.</p>
+    <footer class="bg-gray-900 text-white py-6 px-6 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; 2025 Su Silva. Todos os direitos reservados.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="https://www.instagram.com/eu.suely.weslley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" rel="noopener noreferrer" class="hover:text-pink-300">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=100016097946971" target="_blank"
+                    rel="noopener noreferrer" class="hover:text-pink-300">Facebook</a>
+                <a href="https://wa.me/+555592995302228" class="hover:text-pink-300">Contato</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/+555592995302228"
+        class="whatsapp-btn fixed bottom-20 right-6 bg-green-500 text-white p-5 rounded-full shadow-lg pulse z-50"
+        target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp (abre em nova janela)">
+        <i class="fab fa-whatsapp whatsapp-icon text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        const products = [
+            { brand: 'Shein', name: 'Kit 3 Short Tactel Bermuda Praia Skate Trieno 7 NEW YORK Oferta', image: 'assets/img/shein/shein-1.jpeg', link: 'https://br.shein.com/Kit-3-Short-Tactel-Bermuda-Beach-Skate-Trieno-7-NEW-YORK-Offer-p-55745190.html?mallCode=2&imgRatio=3-4' },
+            { brand: 'Shein', name: 'Amo&Tiamo Sutiã Esportivo com bojo Confortável Ideal Para Mulheres /fitness/Yoga/Esportes/ Top', image: 'assets/img/shein/shein-2.jpeg', link: 'https://br.shein.com/Women-Bras-Bralettes-p-30128498.html?mallCode=2&imgRatio=3-4' },
+            { brand: 'Shein', name: 'INAWLY Camiseta de Manga Curta Casual Feminina com Estampa Floral e Bicicleta, Camisetas Gráficas de Verão para Mulheres', image: 'assets/img/shein/shein-3.jpeg', link: 'https://br.shein.com/INAWLY-Women-s-Casual-Floral-Bicycle-Print-Short-Sleeve-T-Shirt-Summer-Graphic-Tees-Women-Tops-p-42994033.html?mallCode=2&imgRatio=3-4' },
+            { brand: 'Natura', name: 'Kit Kaiak Clássico Masculino (2 unidades)', image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwfcf178bb/produto-joia/background/mobile/199157.jpg', link: 'https://www.natura.com.br/p/kit-kaiak-classico-masculino-2-unidades-2-un-de-100-ml/NATBRA-199157?position=2&listTitle=manual+showcase+-+aproveite+a+perfumaria+Natura&consultoria=susilvanotassublime' },
+            { brand: 'Natura', name: 'Essencial Palo Santo Deo Parfum Feminino', image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw22185f0d/produto-joia/background/mobile/105359.jpg', link: 'https://www.natura.com.br/p/essencial-palo-santo-deo-parfum-feminino-100-ml/NATBRA-105359?position=4&listTitle=category+page+list+showcase+-+perfumaria+feminina&consultoria=susilvanotassublime' },
+            { brand: 'Natura', name: 'Manteiga Uniformizadora de Tom Tododia Jambo Rosa e Flor de Caju', image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa8c38f45/produto-joia/background/mobile/172411.jpg', link: 'https://www.natura.com.br/p/manteiga-uniformizadora-de-tom-tododia-jambo-rosa-e-flor-de-caju-200-g/NATBRA-172411?position=2&listTitle=tab+showcase+-++&consultoria=susilvanotassublime' },
+            { brand: 'O Boticário', name: 'L’eau de Lily Blanche Desodorante Colônia 75ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/product/B86895/8e70b238-8920-4fa1-b832-42b535dc7071-bot-86895-l-eau-de-lily-segredinho-02.jpg', link: 'https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/86895/?utm_source=ab&utm_medium=pdp' },
+            { brand: 'O Boticário', name: 'Floratta Fleur D Éclipse Eau De Parfum 75ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/products/B48621/Floratta_Fleur_Eclipse_B48621_conceito.jpg', link: 'https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/48621/?utm_source=ab&utm_medium=pdp' },
+            { brand: 'O Boticário', name: 'Clash Desodorante Colônia 100ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/product/B50677/e64ac3aa-c95a-412c-b356-b104daf2a71f-bot-50677-clash-desodorante-colonia-segredinho-02.jpg', link: 'https://minhaloja.boticario.com.br/loja-suelysilva-19696365/produto/50677' },
+            { brand: 'Quem Disse Berenice', name: 'Shampoo Reparador Reabilita 250ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/products/Q50512/Reabilita_shampoo_200ml_Q50512_COLOR.jpg', link: 'https://minhaloja.quemdisseberenice.com.br/loja-suelysilva-19696365/produto/50512' },
+            { brand: 'Quem Disse Berenice', name: 'Blush Em Pó Compacto Rubor Vermelho Vermetin 2g', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/Q56733/e16fb12d-8a1b-46c8-a422-9180151ad147-qdb-56733-blush-compacto-vermelho-vermetin-01.jpg', link: 'https://minhaloja.quemdisseberenice.com.br/loja-suelysilva-19696365/produto/56733' },
+            { brand: 'Quem Disse Berenice', name: 'Balm Labial Vermelho Bolo de Caldeirão Harry Potter Quem Disse, Berenice? 3,2g', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/Q56322/f8330a9b-f98d-47cf-a4e6-1fd4a0e119cc-qdb-56322-balm-frontal-01.jpg', link: 'https://minhaloja.quemdisseberenice.com.br/loja-suelysilva-19696365/produto/56322' },
+            { brand: 'Eudora', name: 'Combo Siage Definição Pro Cronology | Shp+Cnd+Creme P/Pentear', image: 'https://sgi.eudora.com.br/Paginas/Imagens/Produtos/88404GG.jpg', link: 'https://minhaloja.eudora.com.br/loja-suelysilva-19696365/produto/88404' },
+            { brand: 'Eudora', name: ' LançamentoPromoção Código 88151 Presente Aurien Gold Des Col + Loção', image: 'https://sgi.eudora.com.br/Paginas/Imagens/Produtos/88151GG.jpg', link: 'https://minhaloja.eudora.com.br/loja-suelysilva-19696365/produto/88151' },
+            { brand: 'Eudora', name: 'Tônico Renovador Antioxidante Niina Skin110ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/E55438/1d4ed444-9c41-43c4-aebb-33625ed4eaa3-e55438-niina-skin-tonico-renovador-antioxidante-vitamina-c-110ml-frontal.jpg', link: 'https://minhaloja.eudora.com.br/loja-suelysilva-19696365/produto/55438' },
+            { brand: 'O.U.I. Paris', name: 'O.U.i Hidratante Desodorante Crème Riche La Villette 470 200g', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/Z56606/58da2bbb-7605-4407-b5e2-f697c6135719-oui-56606-la-vilette-creme-riche-frontal-01.png', link: 'https://minhaloja.ouiparis.com/loja-suelysilva-19696365/produto/56606' },
+            { brand: 'O.U.I. Paris', name: 'O.U.i Jardin De Grasse Rose Eau De Parfum 100ml', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_500,h_500,f_auto,fl_progressive,q_auto:good/v1/imagens/product/Z51782/ff91cd9e-ad89-4dbb-8614-c8865e4a4a2b-jardin-de-grasse-rose-oui-eau-de-parfum-feminino-100ml.png', link: 'https://minhaloja.ouiparis.com/loja-suelysilva-19696365/produto/51782' },
+            { brand: 'O.U.I. Paris', name: 'O.U.i Iconique 001 Intense 2 em 1 - Gel de Banho 200g', image: 'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/product/103418/6d66b237-5081-4f60-b268-82fefbff4c9b-oui-iconique-001-intense-2-em-1-gel-de-banho-200g.png', link: 'https://minhaloja.ouiparis.com/loja-suelysilva-19696365/produto/52279' },
+        ];
+
+        const productsContainer = document.getElementById('products');
+
+        function renderProducts(filter = 'all') {
+            productsContainer.innerHTML = '';
+            const filtered = filter === 'all' ? products : products.filter(p => p.brand === filter);
+            filtered.forEach(p => {
+                const productEl = document.createElement('div');
+                productEl.className = 'product';
+                productEl.dataset.brand = p.brand;
+                productEl.innerHTML = `
+                  <div class="rounded-xl shadow-lg p-4" style="background-color: rgba(255, 255, 255, 0.5);">
+                    <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-contain rounded bg-gray-100">
+                    <h3 class="text-lg font-semibold mt-2">${p.name}</h3>
+                    <a href="${p.link}" target="_blank" rel="noopener noreferrer"
+                       class="mt-4 inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition">
+                      Ver mais
+                    </a>
+                  </div>
+                `;
+                productsContainer.appendChild(productEl);
+            });
+        }
+
+        renderProducts();
+
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const brand = button.getAttribute('data-brand');
+                document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('bg-pink-100'));
+                button.classList.add('bg-pink-100');
+                renderProducts(brand);
+            });
+        });
+
+        // Carrossel automático
+        const carousel = document.getElementById('carousel');
+        let index = 0;
+        const totalImages = carousel.children.length;
+        setInterval(() => {
+            index = (index + 1) % totalImages;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }, 4000);
+    </script>
+    <script src="assets\js\script.js"></script>
 </body>
 
 </html>
